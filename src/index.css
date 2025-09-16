@@ -1,1 +1,19 @@
+@import url("./fonts.css");
 @import "tailwindcss";
+
+:root {
+  --primary: oklch(56.687% 0.20912 27.128);
+  --primary-foreground: oklch(100% 0.00011 271.152);
+}
+
+@theme inline {
+  --font-pretendard: "Pretendard Variable", "sans-serif";
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+}
+
+@layer base {
+  body {
+    @apply font-pretendard;
+  }
+}

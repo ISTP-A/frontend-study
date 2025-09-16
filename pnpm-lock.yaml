@@ -17,9 +17,12 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+<<<<<<< HEAD
       lucide-react:
         specifier: ^0.544.0
         version: 0.544.0(react@19.1.1)
+=======
+>>>>>>> 6358d55 (style: add tailwind variant)
       react:
         specifier: ^19.1.1
         version: 19.1.1
