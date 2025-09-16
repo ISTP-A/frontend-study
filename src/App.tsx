@@ -1,4 +1,4 @@
-import CountPage from './pages/count/count-page'
+import CountPage from './pages/counter/counter-page'
 
 function App() {
   return <CountPage />
