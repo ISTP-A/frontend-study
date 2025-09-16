@@ -1,7 +1,7 @@
-import CountPage from './pages/counter/counter-page'
+import CounterPage from './pages/counter/counter-page'
 
 function App() {
-  return <CountPage />
+  return <CounterPage />
 }
 
 export default App

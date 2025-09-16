@@ -1,20 +1,19 @@
-import { useState } from "react"
-import { Button } from "../../components/ui/button"
+import { useCounter } from "../../features/counter/model/hooks/use-counter"
+import { CounterController } from "../../features/counter/ui/counter-controller"
+import { CounterViewer } from "../../features/counter/ui/counter-viewer"
 
 export default function CounterPage() {
-    const [count, setCount] = useState<number>(0)
-
-    const handleUpCount = () => setCount(prev => prev + 1)
-    const handleDownCount = () => setCount(prev => prev - 1)
-    const handleResetCount = () => setCount(0)
+    const counter = useCounter({ initial: 1000 })
     return (
-        <div className="max-w-screen-md mx-auto flex flex-col gap-2">
-            <p>{count}</p>
-            <div className="inline-flex items-center gap-1">
-                <Button size='icon' onClick={handleDownCount}>-</Button>
-                <Button variant='outline' size='sm' onClick={handleResetCount}>RESET</Button>
-                <Button size='icon' onClick={handleUpCount}>+</Button>
-            </div>
+        <div className="max-w-40 mx-auto flex flex-col gap-2">
+            <CounterViewer
+                count={counter.formatted}
+            />
+            <CounterController
+                onIncrement={counter.increment}
+                onDecrement={counter.decrement}
+                onReset={counter.reset}
+            />
         </div>
     )
 }
